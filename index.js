@@ -21,14 +21,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-//Fiebase admin
-
-const admin = require("firebase-admin");
-const serviceAccount = require("./Config/creative-agency-02-firebase-adminsdk-y6407-82b260fe18.json");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
 
 client.connect(err => {
   const orderCollection = client.db("agency-manager").collection("orders");
